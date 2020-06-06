@@ -1,0 +1,44 @@
+{% extends "fotopage/wrapper.html" %}
+
+    <!-- Portfolio Section -->
+{% block content %}
+   <!-- Theme CSS and fonts -->
+{% load static %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+<link rel="stylesheet" href="{% static '/fotopage/portfolio.css' %}">
+</head>
+
+<body>
+{% include "fotopage/menu.html" %}
+    <div class="container">
+        <div class = "row name">
+            <a class = "ksu" href="/foto/">
+            Ksenia Sheen
+            </a>
+        </div>
+        <div class = "row photo">
+            <p>Photographer</p>
+        </div>
+    </div>
+    <section class="gallery-block grid-gallery">
+      <div class="container-fluid">
+        <div class="row no-gutter">
+            {% for photo in photos %}
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2 item d-flex align-items-center">
+                <a class="lightbox" href="{{ photo.image.url }}"id="gallery-lightbox">
+                <img class="img-fluid image scale-on-hover"
+                src="{{ photo.thumb.url }}" alt="{{photo.alt}}">
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script src="{% static '/fotopage/vendor/jquery.easing.min.js' %}"></script>
+<script>
+    baguetteBox.run('.grid-gallery', { animation: 'slideIn'});
+</script>
+{% endblock %}

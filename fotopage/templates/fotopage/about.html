@@ -1,0 +1,30 @@
+{% extends "fotopage/wrapper.html" %}
+{% load static %}
+
+    <!-- Portfolio Section -->
+{% block content %}
+   <!-- Theme CSS and fonts -->
+ 
+    <link rel="stylesheet" href="{% static '/fotopage/about.css' %}">
+</head>
+<body>
+{% include "fotopage/menu.html" %}
+    <div class="container">
+        <div class = "row name">
+            <a class = "ksu" href="/foto/">
+            Ksenia Sheen
+            </a>
+        </div>
+        <div class = "row photo">
+            <p>Photographer</p>
+        </div>
+    </div>
+    <section class="container">
+      <article class="row no-gutter">
+        <div class = "col col-12">
+        <p class="about"> {{Ksenia_Sheen}} </p>
+        </div>
+      </article>
+    </section>
+    </body>
+{% endblock %}

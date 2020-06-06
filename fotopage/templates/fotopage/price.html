@@ -1,0 +1,42 @@
+{% extends "fotopage/wrapper.html" %}
+{% load static %}
+
+    <!-- Portfolio Section -->
+{% block content %}
+   <!-- Theme CSS and fonts -->
+ 
+    <link rel="stylesheet" href="{% static '/fotopage/price.css' %}">
+</head>
+<body>
+{% include "fotopage/menu.html" %}
+    <div class="container">
+        <div class = "row name">
+            <a class = "ksu" href="/foto/">
+            Ksenia Sheen
+            </a>
+        </div>
+        <div class = "row photo">
+            <p>Photographer</p>
+        </div>
+    </div>
+<section class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Пакет</th>
+      <th scope="col">Описание</th>
+      <th scope="col">Стоимость</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for price in prices %}
+    <tr>
+      <td>{{ price.title }}</td>
+      <td>{{ price.description }}</td>
+      <td> {{ price.price }}</td>
+    </tr>
+      {% endfor %}
+  </tbody>
+</table>
+</section>
+{% endblock %}

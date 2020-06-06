@@ -1,0 +1,42 @@
+{% extends "fotopage/wrapper.html" %}
+{% load static %}
+
+    <!-- Portfolio Section -->
+{% block content %}
+   <!-- Theme CSS and fonts -->
+ 
+    <link rel="stylesheet" href="{% static '/fotopage/style.css' %}">
+</head>
+<body>
+{% include "fotopage/menu.html" %}
+    <div class="container">
+        <div class = "row name">
+            <a class = "ksu" href="/foto/">
+            Ksenia Sheen
+            </a>
+        </div>
+        <div class = "row photo">
+            <p>Photographer</p>
+        </div>
+    </div>
+    
+    <section id="portfolio">
+        <div class="container portfolio">
+            <div class="row no-gutters">
+                {% for item in Themes %}
+                <div class="col-lg-4 col-sm-6 ">
+                    <a class="portfolio-box" href="{{item.slug}}/">
+                        <img src="{{ item.thumb.url }}" class="img-fluid"  alt="Responsive image">
+                        <div class="portfolio-box-caption">
+                            <div class="project-category">
+                                {{ item.title }}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}
