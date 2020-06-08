@@ -6,7 +6,7 @@ from django.utils import timezone
 
 # Create your models here.
 class About(models.Model):
-    aboutme = models.CharField(max_length = 10000)
+    aboutme = models.TextField()
     
     def __str__(self):
         return self.aboutme
@@ -37,7 +37,7 @@ class Lightbox(models.Model):
     
 class Priceofwork(models.Model):
     title = models.CharField(max_length = 200)
-    description = models.CharField(max_length = 5000)
+    description = models.TextField()
     price = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
     
@@ -46,7 +46,7 @@ class Priceofwork(models.Model):
     
 class Specialoffers(models.Model):
     title = models.CharField(max_length = 200)
-    description = models.CharField(max_length = 5000)
+    description = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
