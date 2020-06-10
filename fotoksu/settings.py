@@ -24,13 +24,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'y*r#0l#+byt$4&sr#c!1bg%_%d6g5738b7%!h)h(q!71m$ph*d')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+DEBUG = True
 
 ALLOWED_HOSTS = ['kseniasheen.herokuapp.com', 'localhost']
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'fotopage.apps.FotopageConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,7 +129,7 @@ CACHES = {
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'fotoksu/mediafiles')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'mediafiles')
 # Heroku: Update database configuration from $DATABASE_URL.
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
