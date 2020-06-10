@@ -1,5 +1,5 @@
-# Text backup files
-*.bak
+db.sqlite3
 
-#Database
-*.sqlite3
+.pyc
+
+__pycashe__/
