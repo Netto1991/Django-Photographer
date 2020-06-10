@@ -14,6 +14,3 @@ from whitenoise import WhiteNoise
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fotoksu.settings')
 
-application = get_wsgi_application()
-application = WhiteNoise(application, root='static/')
-application.add_files('mediafiles/', prefix='more-files/')
