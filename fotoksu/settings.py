@@ -132,7 +132,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'fotoksu/mediafiles')
 # Heroku: Update database configuration from $DATABASE_URL.
 
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
